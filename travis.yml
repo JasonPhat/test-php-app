@@ -29,7 +29,7 @@ matrix:
     allow_failures:
         - php: nightly
 
-before_install:
+before_script:
   # Install PHP CodeSniffer.
   - if [[ "$SNIFF" == "1" ]]; then composer self-update; fi
   - if [[ "$SNIFF" == "1" ]]; then composer require squizlabs/php_codesniffer:dev-master; fi
@@ -46,4 +46,4 @@ script:
   # out the `--standard=` part of the command.
   #- if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs . --standard=./custom-ruleset.xml; fi
   - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs . --standard=PSR2; fi
-  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phplint .
+  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phplint
