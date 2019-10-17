@@ -1,6 +1,0 @@
-language: php
-
-os: linux
-
-php:
-  - 7.1
