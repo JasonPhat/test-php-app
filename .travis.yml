@@ -36,4 +36,4 @@ script:
   # out the `--standard=` part of the command.
   #- if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs . --standard=./custom-ruleset.xml; fi
   - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs . --standard=PSR2 --ignore=*/vendor/*; fi
-  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phplint .
+  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phplint .; fi
