@@ -1,2 +1,2 @@
 <?php include 'functions.php';
-MyProject2\output(;
+MyProject2\output();
