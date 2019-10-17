@@ -24,7 +24,6 @@ before_script:
   - if [[ "$SNIFF" == "1" ]]; then composer self-update; fi
   - if [[ "$SNIFF" == "1" ]]; then composer require squizlabs/php_codesniffer:dev-master; fi
   - if [[ "$SNIFF" == "1" ]]; then composer require overtrue/phplint; fi
-  - if [[ "$SNIFF" == "1" ]]; then composer require sensiolabs/security-checker; fi
   - if [[ "$SNIFF" == "1" ]]; then composer install; fi
   - phpenv rehash
 
@@ -38,4 +37,3 @@ script:
   #- if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs . --standard=./custom-ruleset.xml; fi
   - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs ./ --standard=PSR2 --ignore=*/vendor/*; fi
   - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phplint . --exclude=vendor; fi
-  - if [[ "$SNIFF" == "1" ]]; then vendor/SensioLabs/Security security-checker security:check; fi
