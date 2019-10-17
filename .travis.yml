@@ -38,4 +38,4 @@ script:
   #- if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs . --standard=./custom-ruleset.xml; fi
   - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs ./ --standard=PSR2 --ignore=*/vendor/*; fi
   - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phplint . --exclude=vendor; fi
-  - if [[ "$SNIFF" == "1" ]]; then security-checker security:check; fi
+  - if [[ "$SNIFF" == "1" ]]; then php security-checker security:check; fi
