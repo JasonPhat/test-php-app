@@ -1,16 +1,15 @@
 # Travis CI (MIT License) configuration file
 # @link https://travis-ci.org/
 
-# Use new container based environment
-sudo: false
 
 # Declare project language.
 # @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
+os: linux
 
 # Declare versions of PHP to use. Use one decimal max.
 # @link http://docs.travis-ci.com/user/build-configuration/
-matrix:
+jobs:
     fast_finish: true
 
     include:
@@ -23,11 +22,7 @@ matrix:
         # aliased to a recent 7.2 version
         - php: '7.2'
         - php: '7.3'
-        # php nightly
-        - php: 'nightly'
 
-    allow_failures:
-        - php: nightly
 
 before_script:
   # Install PHP CodeSniffer.
