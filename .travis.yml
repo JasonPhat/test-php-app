@@ -35,5 +35,5 @@ script:
   # and, like the travis script, is in the root of the project, you can leave
   # out the `--standard=` part of the command.
   #- if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs . --standard=./custom-ruleset.xml; fi
-  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs ./ --standard=PSR2; fi
+  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs ./ --standard=PSR2 --ignore=vendor; fi
   - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phplint . --exclude=vendor; fi
